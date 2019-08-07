@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84EA3B0C-AB61-4289-A4E8-8A6FD6E5C2C3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Execution</RootNamespace>
+    <AssemblyName>Execution</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="dotMemory.Unit, Version=111.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.dotMemoryUnit.3.0.20171219.105559\lib\net35\dotMemory.Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq.Portable, Version=1.4.18916.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MoreLinq.Portable.1.4.0\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\MoreLinq.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter\AdapterExamples.cs" />
+    <Compile Include="Adapter\AdapterExercise.cs" />
+    <Compile Include="Bridge\BridgeExamples.cs" />
+    <Compile Include="Bridge\BridgeExercise.cs" />
+    <Compile Include="Builder\BuilderExample.cs" />
+    <Compile Include="Builder\BuilderExercise.cs" />
+    <Compile Include="ChainOfResponsibility\ChainOfResponsabilityExamples.cs" />
+    <Compile Include="ChainOfResponsibility\ChainOfResponsabilityExercise.cs" />
+    <Compile Include="Command\CommandExamples.cs" />
+    <Compile Include="Composite\CompositeExamples.cs" />
+    <Compile Include="Composite\NeuralNetworksExample.cs" />
+    <Compile Include="Decorator\DecoratorExercise.cs" />
+    <Compile Include="Decorator\DecoratorExamples.cs" />
+    <Compile Include="FactoryExercise.cs" />
+    <Compile Include="Factory\AbstractFactoryExample.cs" />
+    <Compile Include="Factory\FactoryExample.cs" />
+    <Compile Include="Flyweight\FlyweightExamples.cs" />
+    <Compile Include="Flyweight\FlyweightExercise.cs" />
+    <Compile Include="Interpreter\InterpreterExamples.cs" />
+    <Compile Include="Iterator\IteratorExamples.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prototype\PrototypeExamples.cs" />
+    <Compile Include="Proxy\ProxyExamples.cs" />
+    <Compile Include="Proxy\ProxyExercise.cs" />
+    <Compile Include="Singleton\MonoStatePatternAlternative.cs" />
+    <Compile Include="Singleton\SingletonExamples.cs" />
+    <Compile Include="Singleton\SingletonExercise.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Singleton\capitals.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

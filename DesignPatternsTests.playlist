@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="Execution.Singleton.SingletonTest.IsSingletonTest" /><Add Test="Execution.Singleton.SingletonTest.SingletonTotalPopulationTest" /></Playlist>
