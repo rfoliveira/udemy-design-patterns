@@ -73,6 +73,7 @@
     <Compile Include="Flyweight\FlyweightExamples.cs" />
     <Compile Include="Flyweight\FlyweightExercise.cs" />
     <Compile Include="Interpreter\InterpreterExamples.cs" />
+    <Compile Include="Iterator\ArrayBackedProperties.cs" />
     <Compile Include="Iterator\IteratorExamples.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

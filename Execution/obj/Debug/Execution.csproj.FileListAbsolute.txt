@@ -1,4 +1,3 @@
-C:\cursos\udemy\Design Patterns In C#\DesignPatterns\Execution\obj\Debug\Execution.csproj.CoreCompileInputs.cache
 C:\cursos\udemy\Design Patterns In C#\DesignPatterns\Execution\bin\Debug\Execution.exe.config
 C:\cursos\udemy\Design Patterns In C#\DesignPatterns\Execution\bin\Debug\Execution.exe
 C:\cursos\udemy\Design Patterns In C#\DesignPatterns\Execution\bin\Debug\Execution.pdb

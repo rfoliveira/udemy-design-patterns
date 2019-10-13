@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using static System.Console;
 
 namespace Execution.Iterator
@@ -83,6 +85,55 @@ namespace Execution.Iterator
         }
     }
 
+    public class BinaryTree<T>
+    {
+        private Node<T> root;
+
+        public BinaryTree(Node<T> root)
+        {
+            this.root = root;
+        }
+
+        public IEnumerable<Node<T>> InOrder
+        {
+            get
+            {
+                IEnumerable<Node<T>> Traverse(Node<T> current)
+                {
+                    if (current.Left != null)
+                    {
+                        foreach (var left in Traverse(current.Left))
+                        {
+                            yield return left;
+                        }
+                    }
+
+                    yield return current;
+
+                    if (current.Right != null)
+                    {
+                        foreach (var right in Traverse(current.Right))
+                        {
+                            yield return right;
+                        }
+                    }
+                }
+
+                foreach (var node in Traverse(root))
+                {
+                    yield return node;
+                }
+            }
+        }
+
+        // Implementing this method says to this caller that 
+        // you dont need to implement IEnumerable<T> for your class
+        public InOrderIterator<T> GetEnumerator()
+        {
+            return new InOrderIterator<T>(root);
+        }
+    }
+    
     public class IteratorExamples
     {
         public static void Demo1()
@@ -108,6 +159,24 @@ namespace Execution.Iterator
             }
 
             WriteLine();
+        }
+
+        public static void Demo2()
+        {
+            var root = new Node<int>(
+                1,
+                new Node<int>(2),
+                new Node<int>(3)
+            );
+
+            var tree = new BinaryTree<int>(root);
+            //WriteLine(string.Join(";", tree.InOrder.Select(x => x.Value)));
+
+            // This way works because you implemented the GetEnumerator method...
+            foreach (var node in tree)
+            {
+                WriteLine(node.Value);
+            }
         }
     }
 }

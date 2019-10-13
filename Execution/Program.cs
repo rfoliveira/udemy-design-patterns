@@ -66,7 +66,8 @@ namespace Execution
 
         private static void IteratorDemos()
         {
-            IteratorExamples.Demo1();
+            //IteratorExamples.Demo1();
+            IteratorExamples.Demo2();
         }
 
         private static void InterpreterDemos()
