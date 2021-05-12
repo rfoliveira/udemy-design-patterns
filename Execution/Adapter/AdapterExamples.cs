@@ -9,6 +9,9 @@ using static System.Console;
 namespace Execution.Adapter
 {
     // this class represents the Main method of the lesson
+    // initially, this class only draw based on Points, not Lines
+    // The challlenge here is using Adapter to make it draw based on lines, 
+    // not only points
     public static class AdapterExamples
     {
         private static readonly List<VectorObject> vectorObjects =
@@ -18,11 +21,13 @@ namespace Execution.Adapter
                 new VectorRectangle(3,3,6,6)
             };
 
+        // Method to be adapted...
         public static void DrawPoint(Point2 p)
         {
             Write(".");
         }
 
+        // rendering with Adapter pattern
         public static void Draw()
         {
             foreach (var vo in vectorObjects)
@@ -114,6 +119,7 @@ namespace Execution.Adapter
         //
     }
 
+    // Example of use of VectorObject
     public class VectorRectangle: VectorObject
     {
         public VectorRectangle(int x, int y, int width, int height)
@@ -125,6 +131,7 @@ namespace Execution.Adapter
         }
     }
 
+    // Class to do the Adapter pattern
     public class LineToPointAdapter : Collection<Point2>
     {
         private static int count;
@@ -205,6 +212,17 @@ namespace Execution.Adapter
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+    }
+
+    public class PointAdapter
+    {
+        public int X, Y;
+
+        public PointAdapter(int x, int y)
+        {
+            X = x;
+            Y = y;
         }
     }
 }

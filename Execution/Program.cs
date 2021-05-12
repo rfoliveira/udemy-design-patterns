@@ -3,7 +3,6 @@ using Execution.Adapter;
 using Execution.Bridge;
 using Execution.Builder;
 using Execution.ChainOfResponsibility;
-using Execution.Command;
 using Execution.Composite;
 using Execution.Decorator;
 using Execution.Factory;
